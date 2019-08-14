@@ -3,7 +3,7 @@
 * Core Settings: [`AUTHN_URL`](#authn_url) • [`APP_DOMAINS`](#app_domains) • [`HTTP_AUTH_USERNAME`](#http_auth_username) • [`HTTP_AUTH_PASSWORD`](#http_auth_password) • [`SECRET_KEY_BASE`](#secret_key_base)
 * Databases: [`DATABASE_URL`](#database_url) • [`REDIS_URL`](#redis_url)
 * Sessions:
-[`ACCESS_TOKEN_TTL`](#access_token_ttl) • [`REFRESH_TOKEN_TTL`](#refresh_token_ttl) • [`SESSION_KEY_SALT`](#session_key_salt) • [`DB_ENCRYPTION_KEY_SALT`](#db_encryption_key_salt) • [`RSA_PRIVATE_KEY`](#rsa_private_key)
+[`ACCESS_TOKEN_TTL`](#access_token_ttl) • [`REFRESH_TOKEN_TTL`](#refresh_token_ttl) • [`SESSION_KEY_SALT`](#session_key_salt) • [`DB_ENCRYPTION_KEY_SALT`](#db_encryption_key_salt) • [`RSA_PRIVATE_KEY`](#rsa_private_key) • [`COOKIE_DOMAIN`](#cookie_domain)
 * OAuth Clients: [`FACEBOOK_OAUTH_CREDENTIALS`](#facebook_oauth_credentials) • [`GITHUB_OAUTH_CREDENTIALS`](#github_oauth_credentials) • [`GOOGLE_OAUTH_CREDENTIALS`](#google_oauth_credentials)
 * Username Policy: [`USERNAME_IS_EMAIL`](#username_is_email) • [`EMAIL_USERNAME_DOMAINS`](#email_username_domains)
 * Password Policy: [`PASSWORD_POLICY_SCORE`](#password_policy_score) • [`BCRYPT_COST`](#bcrypt_cost)

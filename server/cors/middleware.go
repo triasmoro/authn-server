@@ -1,9 +1,10 @@
 package cors
 
 import (
+	"net/http"
+
 	"github.com/gorilla/handlers"
 	"github.com/keratin/authn-server/app"
-	"net/http"
 )
 
 func Middleware(app *app.App) func(http.Handler) http.Handler {

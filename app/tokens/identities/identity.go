@@ -16,6 +16,7 @@ import (
 type Claims struct {
 	AuthTime *jwt.NumericDate `json:"auth_time"`
 	jwt.Claims
+	UserInfo map[string]string
 }
 
 func (c *Claims) Sign(key *private.Key) (string, error) {
@@ -43,6 +44,11 @@ func New(cfg *app.Config, session *sessions.Claims, accountID int, audience stri
 			Audience: jwt.Audience{audience},
 			Expiry:   jwt.NewNumericDate(time.Now().Add(cfg.AccessTokenTTL)),
 			IssuedAt: jwt.NewNumericDate(time.Now()),
+		},
+		UserInfo: map[string]string{
+			"id":    "5",
+			"name":  "test user info",
+			"email": "user@mail.com",
 		},
 	}
 }

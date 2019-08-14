@@ -1,11 +1,12 @@
 package handlers
 
 import (
+	"log"
 	"net/http"
 
-	"github.com/keratin/authn-server/server/sessions"
 	"github.com/keratin/authn-server/app"
 	"github.com/keratin/authn-server/app/services"
+	"github.com/keratin/authn-server/server/sessions"
 )
 
 func DeleteSession(app *app.App) http.HandlerFunc {
@@ -18,5 +19,12 @@ func DeleteSession(app *app.App) http.HandlerFunc {
 		sessions.Set(app.Config, w, "")
 
 		w.WriteHeader(http.StatusOK)
+
+		// w.Header().Set("Access-Control-Allow-Origin", "*")
+
+		log.Println("Set cookie at DELETE /session")
+		log.Println(r.Cookies())
+		log.Println(w.Header())
+		log.Println(w.Header().Get("Set-Cookie"))
 	}
 }

@@ -35,6 +35,11 @@ func Set(cfg *app.Config, w http.ResponseWriter, val string) {
 	if val == "" {
 		cookie.MaxAge = -1
 	}
+
+	if cfg.CookieDomain != "" {
+		cookie.Domain = cfg.CookieDomain
+	}
+
 	http.SetCookie(w, cookie)
 }
 

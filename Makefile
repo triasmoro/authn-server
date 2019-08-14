@@ -41,9 +41,10 @@ dist/authn-windows64.exe: init
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags '-X main.VERSION=$(VERSION)' -o '$@'
 
 # The Docker target wraps the linux/amd64 binary
+# nanti ganti lagi nih tag nya dari `dev-tri` ke `latest`
 .PHONY: dist/docker
 dist/docker: dist/authn-linux64
-	docker build --tag $(NAME):latest .
+	docker build --tag $(NAME):dev-tri .
 
 # Build all distributables
 .PHONY: dist

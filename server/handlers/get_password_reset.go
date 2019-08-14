@@ -22,6 +22,9 @@ func GetPasswordReset(app *app.App) http.HandlerFunc {
 			}
 		}()
 
-		w.WriteHeader(http.StatusOK)
+		// w.WriteHeader(http.StatusOK)
+		WriteData(w, http.StatusOK, map[string]string{
+			"message": "ok",
+		})
 	}
 }

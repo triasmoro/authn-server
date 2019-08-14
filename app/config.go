@@ -43,6 +43,7 @@ type Config struct {
 	RefreshTokenTTL             time.Duration
 	RedisURL                    *url.URL
 	DatabaseURL                 *url.URL
+	CookieDomain                string
 	SessionCookieName           string
 	OAuthCookieName             string
 	SessionSigningKey           []byte
@@ -508,6 +509,15 @@ var configurers = []configurer{
 				c.FacebookOauthCredentials = credentials
 			}
 			return err
+		}
+		return nil
+	},
+
+	// COOKIE_DOMAIN is a configuration string for the cookie domain. When specified,
+	// AuthN will use domain at login success response `Set-Cookie: ...; Domain={cookie_domain}`
+	func(c *Config) error {
+		if val, ok := os.LookupEnv("COOKIE_DOMAIN"); ok {
+			c.CookieDomain = val
 		}
 		return nil
 	},
